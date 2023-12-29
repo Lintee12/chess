@@ -1,0 +1,112 @@
+html,
+body {
+    font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    /* overflow: hidden; */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    justify-content: center;
+    padding-right: 50px;
+    padding-top: 50px;
+    background-color: rgb(8, 6, 6);
+    align-items: center;
+    border-radius: 20px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+}
+
+.chess-rows {
+    display: flex;
+    flex-direction: column;
+}
+
+.row-label {
+    display: flex;
+    width: 50px;
+    height: 100px;
+    font-size: 40px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.chess-columns {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: right;
+}
+
+.column-label {
+    display: flex;
+    width: 100px;
+    height: 50px;
+    font-size: 40px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.chess-board {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 800px;
+    height: 800px;
+    margin: auto;
+    background-color: rgb(75, 42, 0);
+}
+
+.chess-board-slot {
+    width: 100px;
+    height: 100px;
+}
+
+.slot-white {
+    background-color: rgb(231, 221, 190);
+}
+
+.slot-black {
+    background-color: rgb(146, 112, 89);
+}
+
+.chess-piece {
+    user-select: none;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transform: translateZ(0);
+}
+
+.chess-piece img {
+    width: 80px;
+    height: 80px;
+}
