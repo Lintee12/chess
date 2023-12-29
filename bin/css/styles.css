@@ -5,6 +5,7 @@ body {
     display: flex;
     align-items: center;
     width: 100%;
+    flex-direction: column;
     /* overflow: hidden; */
 }
 
@@ -24,6 +25,8 @@ main {
     background-color: rgb(8, 6, 6);
     align-items: center;
     border-radius: 20px;
+    margin: 40px;
+    margin-bottom: 20px;
 }
 
 .column {
@@ -111,4 +114,13 @@ main {
     object-fit: contain;
     box-sizing: border-box;
     cursor: pointer;
+}
+
+.main-p-content {
+    font-size: 1.2rem;
+    padding: 20px;
+}
+
+a {
+    color: brown;
 }
