@@ -29,6 +29,7 @@ function dragStart(event) {
     if(event.target.classList.contains('draggable')) {
         payload.piece = event.target.parentNode;
         payload.piece.style.position = 'absolute';
+        payload.piece.style.zIndex = 9999;
         payload.initialTransform = window.getComputedStyle(payload.piece).transform;
         payload.initialX = event.clientX - payload.offsetX;
         payload.initialY = event.clientY - payload.offsetY;
