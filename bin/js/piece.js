@@ -5,7 +5,7 @@ function createPiece(piece, color) { //♔♕♖♗♘♙
     div.classList.add('chess-piece');
     div.dataset.pieceColor = split[0]
     div.dataset.pieceName = split[1];
-    img.src = `../bin/chess-set/${piece}.svg`;
+    img.src = `/bin/chess-set/${piece}.svg`;
     img.draggable = false;
     img.alt = piece;
     img.classList.add('draggable');
