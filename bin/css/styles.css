@@ -82,12 +82,18 @@ main {
     width: 800px;
     height: 800px;
     margin: auto;
-    background-color: rgb(75, 42, 0);
+    background-color: rgb(0, 255, 42);
 }
 
 .chess-board-slot {
     width: 100px;
     height: 100px;
+    box-sizing:border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid transparent;
+    transition: border 0s;
 }
 
 .slot-white {
@@ -106,6 +112,8 @@ main {
     align-items: center;
     justify-content: center;
     transform: translateZ(0);
+    box-sizing: border-box;
+    padding: 0px 20px;
 }
 
 .chess-piece img {
@@ -114,6 +122,12 @@ main {
     object-fit: contain;
     box-sizing: border-box;
     cursor: pointer;
+    transition: all .1s ease;
+}
+
+.chess-piece img:active {
+    transform: scale(1.1);
+    filter: drop-shadow(0px 0px 10px #000000);
 }
 
 .main-p-content {

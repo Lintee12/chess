@@ -1,4 +1,4 @@
-const chessboard = [
+const initialBoardState = [
     { piece: "w_pawn", row: "2", column: "a" },
     { piece: "w_pawn", row: "2", column: "b" },
     { piece: "w_pawn", row: "2", column: "c" },
@@ -32,3 +32,51 @@ const chessboard = [
     { piece: "b_knight", row: "8", column: "g" },
     { piece: "b_rook", row: "8", column: "h" }
 ];
+
+function getAllMoves(pieceType, pieceColor, pieceRow, pieceColumn) {
+    let processedColor;
+    let allMoves;
+    if (pieceColor.toLowerCase() === 'b' || pieceColor.toLowerCase() === 'black') {
+        processedColor = 'black';
+    } 
+    else if (pieceColor.toLowerCase() === 'w' || pieceColor.toLowerCase() === 'white') {
+        processedColor = 'white';
+    } 
+    else {
+        console.error(pieceColor, 'is not a valid color...');
+        return allMoves;
+    }    
+    console.log(`checking moves for ${processedColor} ${pieceType} located at ${pieceRow}${pieceColumn}`)
+    switch (pieceType) {
+        case 'pawn':
+            if(processedColor === 'black') {
+                allMoves = [
+                    [(parseInt(pieceRow) - 1).toString(), pieceColumn],
+                    [(parseInt(pieceRow) - 2).toString(), pieceColumn]
+                ];
+                return allMoves;
+            }
+            else if(processedColor === 'white') {
+                allMoves = [
+                    [(parseInt(pieceRow) + 1).toString(), pieceColumn],
+                    [(parseInt(pieceRow) + 2).toString(), pieceColumn]
+                ];
+                return allMoves;
+            }
+            break;
+    
+        default:
+            break;
+    }
+}
+
+function getInitialBoardState() {
+    return initialBoardState;
+}
+
+const chess = {
+    getInitialBoardState,
+    getAllMoves,
+};
+
+export default chess;

@@ -1,3 +1,6 @@
+import chess from "./chess.js";
+import { createPiece } from "./piece.js";
+
 const board = document.querySelector('.chess-board');
 
 const rows = [8, 7, 6, 5, 4, 3, 2, 1];
@@ -26,8 +29,8 @@ function drawBoard() {
     }
 }
 
-function spawnPices() {
-    chessboard.forEach(piece => {
+function spawnPieces() {
+    chess.getInitialBoardState().forEach(piece => {
         let foundSlot;
         document.querySelectorAll('.chess-board-slot').forEach(slot => {
             if(slot.dataset.row === piece.row && slot.dataset.column === piece.column) {
@@ -40,5 +43,5 @@ function spawnPices() {
 
 window.onload = () => {
     drawBoard();
-    spawnPices();
+    spawnPieces();
 }
